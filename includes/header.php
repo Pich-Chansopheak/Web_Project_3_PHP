@@ -34,7 +34,7 @@
 								</ul>
 							</li>
 						</ul>
-</div>
+			</div>
 
 					</div>
 				</div>
@@ -95,7 +95,7 @@
 								<ul class="sub-menu">
 									<li><a href="index.html">Profile</a></li>
 									<li><a href="home-02.html">History</a></li>
-									<li><a href="home-03.html">Log out</a></li>
+									<li><a href="signin.php">Log out</a></li>
 								</ul>
 							</li>
 						</ul>
