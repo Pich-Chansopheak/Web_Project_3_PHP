@@ -63,3 +63,7 @@
 <?php include "includes/footer.php" ?>
 </body>
 </html>
+
+<?php
+	$conn = null;
+?>
