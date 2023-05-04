@@ -23,9 +23,6 @@
             $page ="category.php";
             $pagination =true;
             break;
-      case "order":
-              $page ="order.php";
-              break;  
       case "user":
             $page ="user.php";
             $pagination =true;
