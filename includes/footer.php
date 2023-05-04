@@ -152,6 +152,19 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</div>
 
 	<!-- Modal1 -->
+	<?php
+		include "config.php";
+		try{
+			$stmt = $conn->prepare("SELECT tbproducts.proid, tbproducts.proImg,tbproducts.proPrice, tbproducts.proName, tbcategory.cateName 
+									FROM tbproducts
+									RIGHT JOIN tbcategory 
+									ON tbproducts.cateId = tbcategory.cateId
+									ORDER BY tbproducts.proid");
+			$stmt->execute();
+
+			$stmt->setFetchMode(PDO::FETCH_ASSOC);
+
+	?>
 	<div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
 		<div class="overlay-modal1 js-hide-modal1"></div>
 
@@ -304,6 +317,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			</div>
 		</div>
 	</div>
+	
+	<?php
+		}catch(PDOException $e){
+			echo "Error: ".$e->getMessage();
+		}
+
+		$conn = null;
+	?>
 
 <!--===============================================================================================-->	
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -426,3 +447,119 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+	<script src="https://kit.fontawesome.com/755d02c3ba.js" crossorigin="anonymous"></script>
+	
+	<!-- products detail -->
+<script>
+		$(document).ready(function(){
+			$(".addToCart").click(function(e){
+				e.preventDefault();
+				// ???????????????????????????????????
+				var $form = $(this).closest(".form-submit");
+				var pro_id = $form.find(".pro_id").val();
+				var pro_name = $form.find(".pro_name").val();
+				var pro_price = $form.find(".pro_price").val();
+				var pro_img = $form.find(".pro_img").val();
+				// console.log(pro_id);
+				$.ajax({
+					url: 'addToCart.php',
+					method: 'post',
+					data: {pro_id:pro_id, pro_name:pro_name, pro_price:pro_price, pro_img:pro_img },
+					success:function(response){
+						$("#message").html(response);
+						load_cart_item_number();
+					}
+				});
+			});
+			
+			load_cart_item_number();
+
+			function load_cart_item_number(){
+				$.ajax({
+					url: 'addToCart.php',
+					method: 'get',
+					data: {cartItem: "cart-item"},
+					success: function(response){
+						$("#cart-item").html(response);
+					}
+				});
+			}
+
+			
+
+			// $("#btnMinus").click(function(e){
+			// 	e.preventDefault();
+			// 	// ?????????????
+			// 	var $eel = $(this).closest('tr');
+
+			// 	var ppid = $eel.find(".pid").val();
+			// 	var ppprice = $eel.find(".pprice").val();
+			// 	var pqty = parseInt($eel.find(".num-product").val()) +1;
+			// 	if(pqty>1){
+			// 		pqty -= 1;
+			// 	}
+			// 	else{
+			// 		pqty=1;
+			// 	}
+				
+
+			// 	// alert(pqty);
+	
+			// 	// console.log(qty);
+			// 	// var ttprice = ppprice * pqty;
+			// 	// alert(parseFloat(ttprice));
+
+			// 	location.reload(true);
+			// 	$.ajax({
+			// 		url: 'addToCart.php',
+			// 		method: 'post',
+			// 		// ????????????????????
+			// 		cache: false,
+			// 		data: {pqty:pqty, ppid:ppid, ppprice:ppprice},
+			// 		success: function(response){
+			// 			$("#msg").html(response);
+			// 			console.log(response);
+			// 		}
+			// 	});
+			// });
+		});
+
+</script>
+
+<!-- cart -->
+<script>
+	$(document).ready(function(){
+		$(".numPro").on('change', function(){
+				// ?????????????
+				var $el = $(this).closest('tr');
+
+				var pid = $el.find(".pid").val();
+				var pprice = $el.find(".pprice").val();
+				var qty = $el.find(".numPro").val();
+
+				if(qty>1){
+					var tprice = pprice * qty;
+				}else{
+					qty = 1;
+					tprice = pprice;
+				}
+				
+				// alert(parseFloat(tprice));
+
+				// location.reload(true);
+				$.ajax({
+					url: 'addToCart.php',
+					method: 'post',
+					// ????????????????????
+					cache: false,
+					data: {qty:qty, pid:pid, pprice:pprice, tprice:tprice},
+					success: function(response){
+						$("#smg").html(response);
+					
+					}
+				});
+			});
+		
+	});
+</script>

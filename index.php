@@ -34,11 +34,11 @@
 				$slider = false;
 				$slidebar = false;
 				break;
-			// case "signin":
-			// 		$page = "signin.php";
-			// 		$slider = false;
-			// 		$slidebar = false;
-			// 		break;
+			case "productdetail":
+				$page = "products-detail.php";
+				$slider = false;
+				$slidebar = false;
+				break;
 		}
 	}
 ?>

@@ -1,3 +1,6 @@
+<?php
+	include "config.php";
+?>
 <!-- Header -->
 <header>
 		<!-- Header desktop -->
@@ -72,7 +75,7 @@
 							</li>
 
 							<li class="<?=($page=="cart.php"?"active-menu":"")?>">
-								<a href="index.php?p=cart" >Cart</a>
+								<a href="index.php?p=cart">Cart <span class="text-light bg-danger" style="border-radius: 50%; padding: 0 4px 0 4px;" id="cart-item"></span></a>
 							</li>
 						</ul>
 					</div>	
@@ -83,9 +86,9 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+						<!-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>
+						</div> -->
 
 						<a href="#"  >
 							<!-- <i class="zmdi zmdi-favorite-outline"></i> -->
@@ -137,7 +140,7 @@
 
 
 		<!-- Menu Mobile -->
-		<div class="menu-mobile">
+		<!-- <div class="menu-mobile">
 			<ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
@@ -199,7 +202,7 @@
 					<a href="contact.html">Contact</a>
 				</li>
 			</ul>
-		</div>
+		</div> -->
 
 		<!-- Modal Search -->
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">

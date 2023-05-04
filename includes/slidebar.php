@@ -5,7 +5,7 @@
 					<div class="block1 wrap-pic-w">
 						<img src="images/banner-01.jpg" alt="IMG-BANNER">
 
-						<a href="index?p=shop&c=women" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-filter="women">
+						<a href="index.php?p=shop&c=women" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3" data-filter="women">
 							<div class="block1-txt-child1 flex-col-l">
 								<span class="block1-name ltext-102 trans-04 p-b-8">
 									Women

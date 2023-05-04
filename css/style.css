@@ -22,3 +22,10 @@
     margin: 15px 0 25px 0;
     text-align: center;
 }
+
+/* header */
+.count-cart{
+    color: rgb(255, 0, 0);
+    padding: 0 5px 0 5px;
+    margin-bottom: 6px;
+}
