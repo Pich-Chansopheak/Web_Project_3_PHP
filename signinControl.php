@@ -18,6 +18,7 @@
             $data = $stmt->fetch(PDO::FETCH_BOTH);
 
             $_SESSION['name'] = $data['username'];
+            $_SESSION['valid'] = true;
 
             if(count($data) <1){
                 echo "Not found any username";

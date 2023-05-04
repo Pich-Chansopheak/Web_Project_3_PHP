@@ -3,7 +3,7 @@
   include "../libraries/img.php";
   include "../libraries/auth.php";
   
-  isLogin();
+  isLogin('login.php');
   define("MAXPERPAGE",3);
   $page ="slideshow.php";
   $pagination = false;

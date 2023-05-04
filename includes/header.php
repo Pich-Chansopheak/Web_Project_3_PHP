@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	
 	include "config.php";
 ?>
 <!-- Header -->
@@ -58,11 +58,11 @@
 							<!-- <i class="zmdi zmdi-favorite-outline"></i> -->
 							<ul class="main-menu">
 							<li>
-								<a href="signin.php" class="flex-c-m trans-04 p-lr-25"><?= (($name=$_SESSION['name'])?"$name":'My Account');?></a>
+								<a href="#" class="flex-c-m trans-04 p-lr-25"><?= (($name=$_SESSION['name'])?"$name":'My Account');?></a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Profile</a></li>
 									<li><a href="home-02.html">History</a></li>
-									<li><a href="signin.php">Log out</a></li>
+									<li><a href="logout.php">Log out</a></li>
 								</ul>
 							</li>
 						</ul>

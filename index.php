@@ -1,7 +1,8 @@
 <?php
 	
-	include "config.php";
-
+	include_once "config.php";
+	include "libraries/authpage.php";
+	isLogin('signin.php');
 	$page = "home.php";
 	$slider = true;
 	$slidebar = true;

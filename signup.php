@@ -25,6 +25,17 @@
                   />
                 </div>
                 <div class="mb-3">
+                  <label for="fullname" class="form-label">Full name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Enter your Full name"
+                    autofocus
+                  />
+                </div>
+                <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
                   <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
                 </div>

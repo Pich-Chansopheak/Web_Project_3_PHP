@@ -1,14 +1,14 @@
 <?php
     include_once "../config.php";
     session_start();
-    function isLogin(){
+    function isLogin($page){
         if(!isset($_SESSION['valid'])){
-            header("location: login.php");
+            header("location: $page");
             exit(0);
         }
         
     }
-
+    
     function checkLogin($username,$password){
         global $conn;
         $sql = "SELECT * FROM tbuser WHERE username ='$username' OR email='$username' AND password=md5('".$password."') AND active ='1' AND isadmin='1'"; 
