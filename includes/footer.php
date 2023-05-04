@@ -487,42 +487,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			}
 
 			
-
-			// $("#btnMinus").click(function(e){
-			// 	e.preventDefault();
-			// 	// ?????????????
-			// 	var $eel = $(this).closest('tr');
-
-			// 	var ppid = $eel.find(".pid").val();
-			// 	var ppprice = $eel.find(".pprice").val();
-			// 	var pqty = parseInt($eel.find(".num-product").val()) +1;
-			// 	if(pqty>1){
-			// 		pqty -= 1;
-			// 	}
-			// 	else{
-			// 		pqty=1;
-			// 	}
-				
-
-			// 	// alert(pqty);
-	
-			// 	// console.log(qty);
-			// 	// var ttprice = ppprice * pqty;
-			// 	// alert(parseFloat(ttprice));
-
-			// 	location.reload(true);
-			// 	$.ajax({
-			// 		url: 'addToCart.php',
-			// 		method: 'post',
-			// 		// ????????????????????
-			// 		cache: false,
-			// 		data: {pqty:pqty, ppid:ppid, ppprice:ppprice},
-			// 		success: function(response){
-			// 			$("#msg").html(response);
-			// 			console.log(response);
-			// 		}
-			// 	});
-			// });
 		});
 
 </script>
@@ -551,8 +515,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 				$.ajax({
 					url: 'addToCart.php',
 					method: 'post',
-					// ????????????????????
-					cache: false,
+					// Set cache = false for all jquery ajax requests.
+					// cache: false,
 					data: {qty:qty, pid:pid, pprice:pprice, tprice:tprice},
 					success: function(response){
 						$("#smg").html(response);

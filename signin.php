@@ -2,7 +2,7 @@
 
 <div class="con-signin">
 <div class="form-signin">
-<div class="container-xxl">
+  <div class="container-xxl">
       <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
           <!-- Register -->
@@ -11,14 +11,14 @@
               
             <h3 class="sign-title">Sign In</h3>
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="signinControl.php" method="POST">
                 <div class="mb-3">
-                  <label for="email" class="form-label">Email or Username</label>
+                  <label for="email" class="form-label">Username</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="email"
-                    name="email-username"
+                    id="username"
+                    name="username"
                     placeholder="Enter your email or username"
                     autofocus
                   />
@@ -47,7 +47,7 @@
                   </div>
                 </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" name="sign-in" type="submit">Sign in</button>
                 </div>
               </form>
 

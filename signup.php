@@ -12,7 +12,7 @@
               <h3 class="sign-title">Sign Up</h3>
 
 
-              <form id="formAuthentication" class="mb-3" action="index.html" method="POST">
+              <form id="formAuthentication" class="mb-3" action="signupControl.php" method="POST">
                 <div class="mb-3">
                   <label for="username" class="form-label">Username</label>
                   <input
@@ -43,7 +43,7 @@
                   </div>
                 </div>
 
-                <button class="btn btn-primary d-grid w-100">Sign up</button>
+                <button class="btn btn-primary d-grid w-100" type="submit" name="sign-up">Sign up</button>
               </form>
 
               <p class="text-center pb-3">

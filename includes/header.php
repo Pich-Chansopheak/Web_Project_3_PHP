@@ -1,47 +1,11 @@
 <?php
+	session_start();
 	include "config.php";
 ?>
 <!-- Header -->
 <header>
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
-			<!-- Topbar -->
-			<!-- <div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
-						Free shipping for standard order over $100
-					</div>
-
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
-							<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-							</ul>
-						</a>
-
-						
-						<ul class="main-menu">
-							<li>
-								<a href="#" class="flex-c-m trans-04 p-lr-25">Home</a>
-								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
-									<li><a href="home-02.html">Homepage 2</a></li>
-									<li><a href="home-03.html">Homepage 3</a></li>
-								</ul>
-							</li>
-						</ul>
-			</div>
-
-					</div>
-				</div>
-			</div> -->
 
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
@@ -89,12 +53,12 @@
 						<!-- <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div> -->
-
+						
 						<a href="#"  >
 							<!-- <i class="zmdi zmdi-favorite-outline"></i> -->
 							<ul class="main-menu">
 							<li>
-								<a href="signin.php" class="flex-c-m trans-04 p-lr-25">My Account</a>
+								<a href="signin.php" class="flex-c-m trans-04 p-lr-25"><?= (($name=$_SESSION['name'])?"$name":'My Account');?></a>
 								<ul class="sub-menu">
 									<li><a href="index.html">Profile</a></li>
 									<li><a href="home-02.html">History</a></li>

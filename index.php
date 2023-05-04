@@ -1,4 +1,5 @@
 <?php
+	
 	include "config.php";
 
 	$page = "home.php";
@@ -63,6 +64,7 @@
 <?php include "includes/footer.php" ?>
 </body>
 </html>
+<?php include "signinControl.php"; ?>
 
 <?php
 	$conn = null;

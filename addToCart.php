@@ -68,8 +68,6 @@
 			$stmt->bindParam(1, $id, PDO::PARAM_INT);
 			$stmt->execute();
 
-			$_SESSION['showAlert'] = 'block';
-			$_SESSION['message'] = 'Item removed from the cart!';
 			header('location: index.php?p=cart');
 		}
 
