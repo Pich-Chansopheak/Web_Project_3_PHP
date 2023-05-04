@@ -1,4 +1,8 @@
-<?php include "includes/head.php"?>
+<?php 
+  include "includes/head.php";
+  include "signinControl.php";
+ 
+?>
 
 <div class="con-signin">
 <div class="form-signin">

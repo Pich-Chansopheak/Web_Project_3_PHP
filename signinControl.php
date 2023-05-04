@@ -1,7 +1,7 @@
 <?php
     session_start();
     include "config.php";
-
+    $error = 0;
     if(isset($_POST['sign-in'])){
 
         $user = $_POST['username'];
@@ -9,10 +9,8 @@
 
         try{
 
-            $sql = "SELECT * FROM tbuser WHERE username = :username OR email = :username AND password = :pwd";
+            $sql = "SELECT * FROM tbuser WHERE (username ='$user' OR email='$user') AND password=md5('".$pwd."') AND active ='1' AND isadmin='1'"; 
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':username', $user);
-            $stmt->bindParam(':pwd', $pwd);
             $stmt->execute();
 
             $data = $stmt->fetch(PDO::FETCH_BOTH);

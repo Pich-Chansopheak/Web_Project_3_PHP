@@ -2,7 +2,7 @@
     include_once "../config.php";
     session_start();
     function isLogin($page){
-        if(!isset($_SESSION['valid'])){
+        if(!isset($_SESSION['advalid'])){
             header("location: $page");
             exit(0);
         }
@@ -24,7 +24,7 @@
             $sql = "UPDATE tbuser SET lastlogin ='$time' WHERE userid =$id ";
             $stmt = $conn->prepare($sql);
             $stmt->execute();
-            $_SESSION['valid'] = true;
+            $_SESSION['advalid'] = true;
             return true;
         }
         return false;
@@ -39,7 +39,7 @@
         
         if($stmt->execute())
         {
-            $_SESSION['valid'] = true;
+            $_SESSION['advalid'] = true;
             return true;
         }
         return false;
