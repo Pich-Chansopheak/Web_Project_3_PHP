@@ -74,9 +74,7 @@
                   <div class="mb-3 form-password-toggle">
                     <div class="d-flex justify-content-between">
                       <label class="form-label" for="txtpassword">Password</label>
-                      <a href="auth-forgot-password-basic.html">
-                        <small>Forgot Password?</small>
-                      </a>
+                      
                     </div>
                     <div class="input-group input-group-merge">
                       <input
@@ -94,12 +92,7 @@
                   </div>
                 </form>
               <!-- End of Form -->
-              <p class="text-center">
-                <span>New on our platform?</span>
-                <a href="signup.php">
-                  <span>Create an account</span>
-                </a>
-              </p>
+              
             </div>
           </div>
           <!-- /Register -->

@@ -11,11 +11,10 @@
     
     function checkLogin($username,$password){
         global $conn;
-        $sql = "SELECT * FROM tbuser WHERE username ='$username' OR email='$username' AND password=md5('".$password."') AND active ='1' AND isadmin='1'"; 
+        $sql = "SELECT * FROM tbuser WHERE (username ='$username' OR email='$username') AND password=md5('".$password."') AND active ='1' AND isadmin='1'"; 
         $stmt = $conn->prepare($sql);
         $stmt->execute();
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        echo $stmt->rowCount();
         if($stmt->rowCount() > 0)
         {
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
