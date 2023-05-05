@@ -6,15 +6,11 @@
   isLogin('login.php');
   define("MAXPERPAGE",3);
   $page ="slideshow.php";
-  $pagination = false;
-  
+  $pagination =true;
   if(isset($_GET['p'])){
     $p=$_GET['p'];
     switch($p){
-      case "slideshow":
-            $page ="slideshow.php";
-            $pagination =true;
-            break;
+      
       case "product":
             $page ="product.php";
             $pagination =true;
