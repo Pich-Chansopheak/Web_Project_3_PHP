@@ -13,18 +13,17 @@
             $stmt = $conn->prepare($sql);
             $stmt->execute();
 
-            $data = $stmt->fetch(PDO::FETCH_BOTH);
-
-            $_SESSION['name'] = $data['username'];
-            $_SESSION['valid'] = true;
-
-            if(count($data) <1){
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+                    
+            if($stmt->rowCount() < 1){
                 echo "Not found any username";
-                exit();
+                exit(0);
+            }else{
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                $_SESSION['name'] = $result['username'];    
+                $_SESSION['valid'] = true;
+                header ("location: index.php");
             }
-   
-            header ("location: index.php");
-
         }catch(PDOException $err){
             echo $err;
         }
