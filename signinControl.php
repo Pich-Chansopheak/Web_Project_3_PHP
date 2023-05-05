@@ -9,7 +9,7 @@
 
         try{
 
-            $sql = "SELECT * FROM tbuser WHERE (username ='$user' OR email='$user') AND password=md5('".$pwd."') AND active ='1' AND isadmin='1'"; 
+            $sql = "SELECT * FROM tbuser WHERE (username ='$user' OR email='$user') AND password=md5('".$pwd."') AND active ='1'"; 
             $stmt = $conn->prepare($sql);
             $stmt->execute();
 
