@@ -1,13 +1,13 @@
 <!-- Content -->
 <?php
     /*Actions on slideshow
-        0.Enable
+       0.Enable
         1.Disable
         2.move up
         3.move down
         4.add new
         5.edit//no function
-        6.update
+        6.update 
         7.delete
     */
     
