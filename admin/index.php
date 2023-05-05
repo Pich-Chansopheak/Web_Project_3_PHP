@@ -10,7 +10,9 @@
   if(isset($_GET['p'])){
     $p=$_GET['p'];
     switch($p){
-      
+      case "slideshow":
+            $page ="slideshow.php";
+            break;
       case "product":
             $page ="product.php";
             $pagination =true;
