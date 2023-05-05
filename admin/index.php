@@ -7,11 +7,13 @@
   define("MAXPERPAGE",3);
   $page ="slideshow.php";
   $pagination =true;
+
   if(isset($_GET['p'])){
     $p=$_GET['p'];
     switch($p){
       case "slideshow":
             $page ="slideshow.php";
+            $pagination =true;
             break;
       case "product":
             $page ="product.php";
@@ -27,6 +29,7 @@
             break;    
       case "login":
             $page ="login.php";
+            $pagination =false;
             break;
 
     }
